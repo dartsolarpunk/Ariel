@@ -87,11 +87,11 @@ pre.src{margin:0;padding:16px;border:1px solid var(--bdr);border-radius:12px;bac
 </head>
 <body>
 <header id="hdr">
-  <img class="mark" src="https://raw.githubusercontent.com/DART-Skyboard/Ariel/main/static/icons/reckon-calc-rk.svg" alt="">
+  <img class="mark" src="icons/reckon-calc-rk.svg" alt="">
   <div class="hl">RECKON</div>
   <div class="hs"></div>
   <div class="ht">Scientific · one-file C++</div>
-  <a class="hback" href="/">Home</a>
+  <a class="hback" href="https://radicaldeepscale.com/">Home</a>
 </header>
 <div class="tabs" role="tablist">
   <button class="tab on" id="tab-calc" onclick="showView('calc')">Calculator</button>
@@ -128,7 +128,7 @@ pre.src{margin:0;padding:16px;border:1px solid var(--bdr);border-radius:12px;bac
     </div>
     <div class="btns">
       <button class="btn" onclick="copyCpp()">Copy</button>
-      <a class="btn" href="/calculator.cpp" download="calculator.cpp" style="display:inline-flex;align-items:center">Download</a>
+      <a class="btn" href="calculator.cpp" download="calculator.cpp" style="display:inline-flex;align-items:center">Download</a>
     </div>
   </div>
   <pre class="src" id="cpp">Loading calculator.cpp…</pre>
@@ -337,11 +337,11 @@ function highlight(src){
 }
 async function loadCpp(){
   if(cppText)return;
-  try{const r=await fetch("/calculator.cpp");if(!r.ok)throw 0;cppText=await r.text();document.getElementById("cpp").innerHTML=highlight(cppText)}
+  try{const r=await fetch("calculator.cpp");if(!r.ok)throw 0;cppText=await r.text();document.getElementById("cpp").innerHTML=highlight(cppText)}
   catch{document.getElementById("cpp").textContent="Could not load calculator.cpp — use Download if the file is on this host."}
 }
 async function copyCpp(){
-  if(!cppText){try{const r=await fetch("/calculator.cpp");cppText=await r.text()}catch{return}}
+  if(!cppText){try{const r=await fetch("calculator.cpp");cppText=await r.text()}catch{return}}
   try{await navigator.clipboard.writeText(cppText)}catch{}
 }
 </script>
